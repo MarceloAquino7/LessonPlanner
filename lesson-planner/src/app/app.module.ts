@@ -7,10 +7,9 @@ import * as ThirdModule from './app.submodule.thirdpart';
 
 import { AppRoutingModule } from './app-routing.module';
 
-
 @NgModule({
   declarations: [
-    ComponentsModule.AppComponent
+    ComponentsModule.AppComponent,
   ],
   imports: [
     AngularModule.BrowserModule,
