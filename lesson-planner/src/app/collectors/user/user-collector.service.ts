@@ -18,3 +18,4 @@ export class UserCollectorService {
     return this.http.get(`/user`);
   }
 }
+
