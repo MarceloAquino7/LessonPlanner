@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   password: string;
   ngOnInit() {
   }
-  
+
   login(): void {
     // tslint:disable-next-line: triple-equals
     if (this.username === 'admin' && this.password === 'admin') {
