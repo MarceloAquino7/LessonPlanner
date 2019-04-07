@@ -14,13 +14,13 @@ namespace LP.Domain.InjectionModules
             builder
                 .RegisterAssemblyTypes(assemblyToScan)
                 .Where(c => c.IsClass
-                            && c.IsInNamespace("LP.Accounting.FinancialStatements.Domain.CommandHandlers"))
+                            && c.IsInNamespace("LP.Domain.CommandHandlers"))
                 .AsImplementedInterfaces();
 
             builder
                 .RegisterAssemblyTypes(assemblyToScan)
                 .Where(c => c.IsClass
-                            && c.IsInNamespace("LP.Accounting.FinancialStatements.Domain.Commands"))
+                            && c.IsInNamespace("LP.Domain.Commands"))
                 .AsImplementedInterfaces();
         }
     }

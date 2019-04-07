@@ -19,13 +19,13 @@ namespace LP.ApplicationService.InjectionModules
             builder
                 .RegisterAssemblyTypes(assemblyToScan)
                 .Where(c => c.IsClass
-                            && c.IsInNamespace("LP.Accounting.FinancialStatements.ApplicationService.Services"))
+                            && c.IsInNamespace("LP.ApplicationService.Services"))
                 .AsImplementedInterfaces();
 
             builder
                 .RegisterAssemblyTypes(assemblyToScan)
                 .Where(c => c.IsClass
-                            && c.IsInNamespace("LP.Accounting.FinancialStatements.ApplicationService.Builders"))
+                            && c.IsInNamespace("LP.ApplicationService.Builders"))
                 .AsImplementedInterfaces();
 
             builder.RegisterType<UserContext>().AsSelf();

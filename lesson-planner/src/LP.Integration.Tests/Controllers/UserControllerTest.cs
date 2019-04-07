@@ -8,7 +8,7 @@ using LP.Integration.Tests.Factories;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
-namespace LP.Accounting.FinancialStatements.Integration.Tests.Controllers
+namespace LP.Integration.Tests.Controllers
 {
     public class UserControllerTest : BaseControllerTest
     {
