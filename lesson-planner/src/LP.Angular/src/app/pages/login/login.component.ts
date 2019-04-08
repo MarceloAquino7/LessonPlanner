@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css', './menu.component.css']
 })
 export class LoginComponent implements OnInit {
   constructor(private router: Router) { }

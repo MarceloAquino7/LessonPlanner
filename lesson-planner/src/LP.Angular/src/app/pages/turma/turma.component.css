@@ -1,11 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-}
-
-#divFull {
+    margin: 0 0 0 0;
     overflow: hidden;
     height: 100vw;
-    background-image: url('../../../assets/facens-wallp.jpg');"    
+    background-image: url('../../../assets/facens-wallp.jpg');    
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
     
@@ -45,15 +43,14 @@ body {
 
 #branca{
     width: 300px;
-    height: 360px;
     background-color: rgba(255,255,255,0.7);
     border-style: double;
     border-color: gray;
     border-radius: 10px;
     text-align: center;
-    position: absolute;
-    top: 600px;
-    left: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
 }
 
 #logo{
@@ -70,4 +67,51 @@ body {
 
 #logo img{
     opacity: .5;
+}
+
+fieldset{
+  border: none;
+}
+
+legend{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-group{
+  margin: 7px auto;
+}
+
+label{
+  width: 150px;
+  display: inline-block;
+}
+
+input[type="name"], input[type="email"], input[type="cpf"], input[type="date"], input[type="password"] {
+  padding: 4px;
+  border-radius: 5px;
+  
+}
+
+input:invalid{
+  border-color: crimson;
+  box-shadow: 0px 0px 3px crimson;
+}
+
+input:focus{
+  outline: none;
+}
+
+input:focus:invalid{
+  box-shadow: none;
+}
+
+span{
+  color: crimson;
+}
+
+input[type="name"], input[type="email"], input[type="cpf"], input[type="date"], input[type="password"] {
+  padding: 4px;
+  border-radius: 5px;
+  
 }

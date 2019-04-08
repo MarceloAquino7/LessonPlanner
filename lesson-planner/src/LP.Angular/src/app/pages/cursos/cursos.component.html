@@ -1,86 +1,98 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="cursos.component.css">
-    <link rel="stylesheet" href="menu.component.css">
+    <link rel="text/css" href="../cursos/cursos.component.css">
+    <link rel="text/css" href="../cursos/menu.component.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-<bodyy class="body">
-    <div id=menu>
-    <input type="checkbox" id="check">
-    <label id="icone" for="check">
-        <img src="../../../assets/icone.png"/>
-    </label>
-    
-    <div class="barra">
-    
-        <nav>
-            <a href="../../../app/pages/login/login.component.html"><div class="link">Login</div></a>
-            <a href="../../../app/pages/cursos/cursos.component.html"><div class="link">Cadastro de Curso</div></a>
-            <a href="../../../app/pages/disciplinas/disciplinas.component.html"><div class="link">Cadastro de Disciplinas</div></a>
-            <a href="../../../app/pages/turma/turma.component.html"><div class="link">Cadastro de Turma</div></a>
-            <a href="../../../app/pages/user/user.component.html"><div class="link">Cadastro de Usuário</div></a>
-        </nav>
-        
-    </div>
-    </div>
-    <div  id="divFull">
-    <div id="branca">
-        <div id="logo"><img src="../../../assets/facens-logo.png"/></div>
-    <div class="Titulo">
-        <p>Lesson Planner</p>
-    </div>
-    <div class="Nome">
-        Cadastro de Cursos
-    </div>
-    <div class="forms">
-        <form>
-            <div>
-                <label for="nomeCurso">Nome Curso: </label>
-                <input type="text" >
-            </div>
-            <br>
-            <div>
-                <label for="competencias">Competencias: </label>
-                <select>
-                    <option value="competencia0">Selecione...</option>
-                    <option value="competencia1">Competencia 1</option>
-                    <option value="competencia2">Competencia 2</option>
-                    <option value="competencia3">Competencia 3</option>
-                    <option value="competencia4">Competencia 4</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="objetivos">Objetivos: </label>
-                <select>
-                    <option value="objetivo0">Selecione...</option>
-                    <option value="objetivo1">Objetivo 1</option>
-                    <option value="objetivo2">Objetivo 2</option>
-                    <option value="objetivo3">Objetivo 3</option>
-                    <option value="objetivo4">Objetivo 4</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="habilidades">Habilidades: </label>
-                <select>
-                    <option value="habilidade0">Selecione...</option>
-                    <option value="habilidade1">Habilidade 1</option>
-                    <option value="habilidade2">Habilidade 2</option>
-                    <option value="habilidade3">Habilidade 3</option>
-                    <option value="habilidade4">Habilidade 4</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="coordenador">Coordenador: </label>
-                <input type="text">
-            </div>
-            <br>
 
-            <input type="button" value="Enviar">
-        </form>
-    </div>
+<body class="body">
+    <div id=menu>
+        <input type="checkbox" id="check">
+        <label id="icone" for="check">
+            <img src="../../../assets/icone.png" />
+        </label>
+
+        <div class="barra">
+
+            <nav>
+                <a href="login">
+                    <div class="link">Login</div>
+                </a>
+                <a href="curso">
+                    <div class="link">Cadastro de Curso</div>
+                </a>
+                <a href="disciplinas">
+                    <div class="link">Cadastro de Disciplinas</div>
+                </a>
+                <a href="turma">
+                    <div class="link">Cadastro de Turma</div>
+                </a>
+                <a href="user">
+                    <div class="link">Cadastro de Usuário</div>
+                </a>
+            </nav>
+
         </div>
     </div>
-</bodyy>
+    <div id="divFull">
+        <div id="branca">
+            <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
+            <div class="Titulo">
+                
+            </div>
+            <div class="Nome">
+                Cadastro de Cursos
+            </div>
+            <div class="forms">
+                <form>
+                    <div>
+                        <label for="nomeCurso">Nome Curso: </label>
+                        <input type="text">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="competencias">Competencias: </label>
+                        <select>
+                            <option value="competencia0">Selecione...</option>
+                            <option value="competencia1">Competencia 1</option>
+                            <option value="competencia2">Competencia 2</option>
+                            <option value="competencia3">Competencia 3</option>
+                            <option value="competencia4">Competencia 4</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="objetivos">Objetivos: </label>
+                        <select>
+                            <option value="objetivo0">Selecione...</option>
+                            <option value="objetivo1">Objetivo 1</option>
+                            <option value="objetivo2">Objetivo 2</option>
+                            <option value="objetivo3">Objetivo 3</option>
+                            <option value="objetivo4">Objetivo 4</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="habilidades">Habilidades: </label>
+                        <select>
+                            <option value="habilidade0">Selecione...</option>
+                            <option value="habilidade1">Habilidade 1</option>
+                            <option value="habilidade2">Habilidade 2</option>
+                            <option value="habilidade3">Habilidade 3</option>
+                            <option value="habilidade4">Habilidade 4</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="coordenador">Coordenador: </label>
+                        <input type="text">
+                    </div>
+                    <br>
+
+                    <input type="button" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
