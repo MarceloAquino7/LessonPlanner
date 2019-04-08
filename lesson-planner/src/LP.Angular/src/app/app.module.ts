@@ -12,7 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     ComponentsModule.AppComponent,
     ComponentsModule.UserComponent,
-    ComponentsModule.LoginComponent
+    ComponentsModule.LoginComponent,
+    ComponentsModule.CursosComponent,
+    ComponentsModule.DisciplinasComponent,
+    ComponentsModule.TurmaComponent
   ],
   imports: [
     AngularModule.BrowserModule,
