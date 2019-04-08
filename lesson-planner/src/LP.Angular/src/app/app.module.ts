@@ -35,8 +35,9 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    ProvidersModule.HttpService, 
-    ProvidersModule.IProvider,],
+    ProvidersModule.HttpService,
+    ProvidersModule.IProvider,
+  ],
   bootstrap: [ComponentsModule.AppComponent]
 })
 export class AppModule { }

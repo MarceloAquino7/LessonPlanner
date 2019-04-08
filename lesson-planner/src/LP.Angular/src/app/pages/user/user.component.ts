@@ -3,18 +3,19 @@ import { Validacoes } from '../../classes/validacoes';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegisterUser } from '../../classes/register-user';
 import { UserCollectorService } from '../../collectors/user/user-collector.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css', './menu.component.css' ]
 })
 export class UserComponent implements OnInit {
 
 
   formularioDeUsuario: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserCollectorService) { }
+  constructor(private fb: FormBuilder, private userService: UserCollectorService, private router: Router) { }
 
   ngOnInit(): void {
     this.criarFormularioDeUsuario();

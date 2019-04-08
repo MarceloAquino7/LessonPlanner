@@ -1,66 +1,77 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="login.component.css">
-    <link rel="stylesheet" href="menu.component.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="text/css" href="../login/login.component.css">
+  <link rel="text/css" href="../login/menu.component.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-<body class="body">
-    <div id=menu>
+
+<body class="body" scroll="no">
+  <div id="menu" scroll="no">
     <input type="checkbox" id="check">
     <label id="icone" for="check">
-        <img src="../../../assets/icone.png"/>
+      <img src="../../../assets/icone.png" />
     </label>
-    
+
     <div class="barra">
-    
-        <nav>
-            <a href="../../../app/pages/login/login.component.html"><div class="link">Login</div></a>
-            <a href="../../../app/pages/cursos/cursos.component.html"><div class="link">Cadastro de Curso</div></a>
-            <a href="../../../app/pages/disciplinas/disciplinas.component.html"><div class="link">Cadastro de Disciplinas</div></a>
-            <a href="../../../app/pages/turma/turma.component.html"><div class="link">Cadastro de Turma</div></a>
-            <a href="../../../app/pages/user/user.component.html"><div class="link">Cadastro de Usuário</div></a>
-        </nav>
-        
+
+      <nav>
+        <a href="login">
+            <div class="link">Login</div>
+        </a>
+        <a href="curso">
+            <div class="link">Cadastro de Curso</div>
+        </a>
+        <a href="disciplinas">
+            <div class="link">Cadastro de Disciplinas</div>
+        </a>
+        <a href="turma">
+            <div class="link">Cadastro de Turma</div>
+        </a>
+        <a href="user">
+            <div class="link">Cadastro de Usuário</div>
+        </a>
+    </nav>
+
     </div>
-    </div>
-    <div  id="divFull">
+  </div>
+  <div id="divFull" scroll="no">
     <div id="branca">
-        <div id="logo"><img src="../../../assets/facens-logo.png"/></div>
-    <div class="Titulo">
-        <p>Lesson Planner</p>
-    </div>
-    <div class="forms">
+      <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
+      <div class="Titulo">
+      </div>
+      <div class="forms">
         <form>
-       <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <form class="example-form">
-          <table class="example-full-width" cellspacing="0">
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password"
-                    required>
-                </mat-form-field>
-              </td>
-            </tr>
-          </table>
+          <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Username" (keyup.enter)="login()" [(ngModel)]="username" name="username" required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Password" (keyup.enter)="login()" [(ngModel)]="password" type="password" name="password"
+                        required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button (click)="login()" color="primary">Login</button>
+          </mat-card-actions>
         </form>
-        <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button (click)="login()" color="primary">Login</button>
-      </mat-card-actions>
-        </form>
-        </div>
-        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>

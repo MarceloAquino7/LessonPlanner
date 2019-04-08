@@ -1,74 +1,88 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="turma.component.css">
-    <link rel="stylesheet" href="menu.component.css">
+    <link rel="text/css" href="../turma/turma.component.css">
+    <link rel="text/css" href="../turma/menu.component.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body class="body">
     <div id=menu>
-    <input type="checkbox" id="check">
-    <label id="icone" for="check">
-        <img src="../../../assets/icone.png"/>
-    </label>
-    
-    <div class="barra">
-    
-        <nav>
-            <a href="../../../app/pages/login/login.component.html"><div class="link">Login</div></a>
-            <a href="../../../app/pages/cursos/cursos.component.html"><div class="link">Cadastro de Curso</div></a>
-            <a href="../../../app/pages/disciplinas/disciplinas.component.html"><div class="link">Cadastro de Disciplinas</div></a>
-            <a href="../../../app/pages/turma/turma.component.html"><div class="link">Cadastro de Turma</div></a>
-            <a href="../../../app/pages/user/user.component.html"><div class="link">Cadastro de Usuário</div></a>
-        </nav>
-        
+        <input type="checkbox" id="check">
+        <label id="icone" for="check">
+            <img src="../../../assets/icone.png" />
+        </label>
+
+        <div class="barra">
+
+            <nav>
+                <a href="login">
+                    <div class="link">Login</div>
+                </a>
+                <a href="curso">
+                    <div class="link">Cadastro de Curso</div>
+                </a>
+                <a href="disciplinas">
+                    <div class="link">Cadastro de Disciplinas</div>
+                </a>
+                <a href="turma">
+                    <div class="link">Cadastro de Turma</div>
+                </a>
+                <a href="user">
+                    <div class="link">Cadastro de Usuário</div>
+                </a>
+            </nav>
+
+        </div>
     </div>
-    </div>
-    <div  id="divFull">
-    <div id="branca">
-        <div id="logo"><img src="../../../assets/facens-logo.png"/></div>
-    <div class="Titulo">
-        <p>Lesson Planner</p>
-    </div>
-    <div class="Nome">
-        Cadastro de Turma
-    </div>
-    <div class="forms">
-        <form>
-            <div>
-                <label for="disciplinas">Disciplinas: </label>
-                <select>
-                    <option value="disciplinas0">Selecione...</option>
-                    <option value="disciplinas1">Programação Orientada a Objeto</option>
-                    <option value="disciplinas2">Processamento de Sinais</option>
-                    <option value="disciplinas3">Processamento de Imagens</option>
-                    <option value="disciplinas4">Estrutura de Dados</option>
-                </select>
+    <div id="divFull">
+        <div id="branca">
+            <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
+            <div class="Titulo">
+                
             </div>
-            <br>
-            <div>
-                <label for="codigo">Codigo: </label>
-                <input type="text">
+            <div class="Nome">
+                Cadastro de Turma
             </div>
-            <br>
-            <div>
-                <label for="curso">Curso: </label>
-                <select>
-                    <option value="curso0">Selecione...</option>
-                    <option value="curso1">Computação</option>
-                    <option value="curso2">Eletrica</option>
-                    <option value="curso3">Mecatronica</option>
-                    <option value="curso4">Mecanica</option>
-                    <option value="curso5">Produção</option>
-                </select>
+            <div class="forms">
+                <form>
+                    <div>
+                        <label for="disciplinas">Disciplinas: </label>
+                        <select>
+                            <option value="disciplinas0">Selecione...</option>
+                            <option value="disciplinas1">Programação Orientada a Objeto</option>
+                            <option value="disciplinas2">Processamento de Sinais</option>
+                            <option value="disciplinas3">Processamento de Imagens</option>
+                            <option value="disciplinas4">Estrutura de Dados</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="codigo">Codigo: </label>
+                        <input type="text">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="curso">Curso: </label>
+                        <select>
+                            <option value="curso0">Selecione...</option>
+                            <option value="curso1">Computação</option>
+                            <option value="curso2">Eletrica</option>
+                            <option value="curso3">Mecatronica</option>
+                            <option value="curso4">Mecanica</option>
+                            <option value="curso5">Produção</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="professor">Professor: </label>
+                        <input type="text">
+                    </div>
+                    <br>
+
+                    <input type="button" value="Enviar">
+                </form>
             </div>
-            <br>
-            <div>
-                <label for="professor">Professor: </label>
-                <input type="text">
-            </div>
-            <br>
-            
-            <input type="button" value="Enviar">
-        </form>
+        </div>
     </div>
 </body>

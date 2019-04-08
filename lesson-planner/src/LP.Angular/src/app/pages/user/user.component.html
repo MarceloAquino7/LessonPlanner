@@ -1,151 +1,168 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="user.component.css">
-    <link rel="stylesheet" href="menu.component.css">
+    <link rel="text/css" href="../user/user.component.css">
+    <link rel="text/css" href="../user/menu.component.css">
     <script src="user.script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body class="body">
     <div id=menu>
-    <input type="checkbox" id="check">
-    <label id="icone" for="check">
-        <img src="../../../assets/icone.png"/>
-    </label>
-    
-    <div class="barra">
-    
-        <nav>
-            <a href="../../../app/pages/login/login.component.html"><div class="link">Login</div></a>
-            <a href="../../../app/pages/cursos/cursos.component.html"><div class="link">Cadastro de Curso</div></a>
-            <a href="../../../app/pages/disciplinas/disciplinas.component.html"><div class="link">Cadastro de Disciplinas</div></a>
-            <a href="../../../app/pages/turma/turma.component.html"><div class="link">Cadastro de Turma</div></a>
-            <a href="../../../app/pages/user/user.component.html"><div class="link">Cadastro de Usuário</div></a>
-        </nav>
-        
-    </div>
-    </div>
-    <div  id="divFull">
-    <div id="branca">
-        <div id="logo"><img src="../../../assets/facens-logo.png"/></div>
-    <div class="Titulo">
-        <p>Lesson Planner</p>
-    </div>
-    <div class="Nome">
-        Cadastro de Turma
-    </div>
-    <div class="forms">
-        <form>
-            <div>
-      <div *ngIf="!nome.pristine && nome.errors">
-        <fieldset>
-        <div class="form-group">
-            <label for="nome" >Nome *:</label>
-            <input type="name" onblur="validarNome()" onfocus="redefinirMsg()" id="nome"/>
-            <br>
-            <span id="error-nome"></span>
+        <input type="checkbox" id="check">
+        <label id="icone" for="check">
+            <img src="../../../assets/icone.png" />
+        </label>
+
+        <div class="barra">
+            <nav>
+                <a href="login">
+                    <div class="link">Login</div>
+                </a>
+                <a href="curso">
+                    <div class="link">Cadastro de Curso</div>
+                </a>
+                <a href="disciplinas">
+                    <div class="link">Cadastro de Disciplinas</div>
+                </a>
+                <a href="turma">
+                    <div class="link">Cadastro de Turma</div>
+                </a>
+                <a href="user">
+                    <div class="link">Cadastro de Usuário</div>
+                </a>
+            </nav>
+
         </div>
-        </fieldset>
-        <p *ngIf="nome.errors.minlength">
-          Nome deve ter no mínimo 3 caracters.
-        </p>
-        <p *ngIf="nome.errors.maxlength">
-          Nome deve ter no máximo 100 caracters.
-        </p>
-      </div>
     </div>
-    <br>
-    <fieldset>
-        <div class="form-group">
-            <label for="email" >Email *:</label>
-            <input type="email" onblur="validarEmail()" onfocus="redefinirMsgE()" id="email"/>
-            <br>
-            <span id="error-email"></span>
+    <div id="divFull">
+        <div id="branca">
+            <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
+            <div class="Titulo">
+            </div>
+            <div class="Nome">
+                Cadastro de Usuário
+            </div>
+            <div class="forms">
+                <form>
+                    <div>
+                        <div *ngIf="!nome.pristine && nome.errors">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="nome">Nome *:</label>
+                                    <input type="name" onblur="validarNome()" onfocus="redefinirMsg()" id="nome" />
+                                    <br>
+                                    <span id="error-nome"></span>
+                                </div>
+                            </fieldset>
+                            <p *ngIf="nome.errors.minlength">
+                                Nome deve ter no mínimo 3 caracters.
+                            </p>
+                            <p *ngIf="nome.errors.maxlength">
+                                Nome deve ter no máximo 100 caracters.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="email">Email *:</label>
+                            <input type="email" onblur="validarEmail()" onfocus="redefinirMsgE()" id="email" />
+                            <br>
+                            <span id="error-email"></span>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <div>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="CPF">CPF *:</label>
+                                <input type="cpf" onblur="validarCPF()" onfocus="redefinirMsgC()" id="CPF" />
+                                <br>
+                                <span id="error-cpf"></span>
+                            </div>
+                        </fieldset>
+                        <div *ngIf="!cpf.pristine && cpf.errors">
+                            <p *ngIf="cpf.errors.required">
+                                CPF é obrigatório.
+                            </p>
+                            <p *ngIf="cpf.errors.cpfInvalido">
+                                Digite um CPF válido
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="data">Nascimento *:</label>
+                                <input type="date" onblur="validarData()" onfocus="redefinirMsgD()" id="data" />
+                                <br>
+                                <span id="error-data"></span>
+                            </div>
+                        </fieldset>
+                        <div *ngIf="!nascimento.pristine && nascimento.errors">
+                            <p *ngIf="nascimento.errors.required">
+                                Data de Nascimento é obrigatória.
+                            </p>
+                            <p *ngIf="nascimento.errors.menorDeIdade">
+                                Você precisa ter mais de 18 anos para cadastrar-se.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="senha">Senha *:</label>
+                                <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="senha" />
+                                <br>
+                                <span id="error-senha"></span>
+                            </div>
+                        </fieldset>
+                        <div *ngIf="!senha.pristine && senha.errors">
+                            <p *ngIf="senha.errors.required">
+                                Senha é obrigatória.
+                            </p>
+                            <p *ngIf="senha.errors.minlength">
+                                Senha deve ter no mínimo 6 caracters.
+                            </p>
+                            <p *ngIf="senha.errors.maxlength">
+                                Senha deve ter no máximo 12 caracters.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="csenha">Confirmar Senha*:</label>
+                                <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="csenha" />
+                                <br>
+                                <span id="error-senha"></span>
+                            </div>
+                        </fieldset>
+                        <div *ngIf="!confirmarSenha.pristine && confirmarSenha.errors">
+                            <p *ngIf="confirmarSenha.errors.required">
+                                Confirme sua senha.
+                            </p>
+                            <p *ngIf="confirmarSenha.errors.senhasNaoCoincidem">
+                                As senhas não coincidem.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Coordenador</label>
+                        <input type="checkbox">
+                    </div>
+                    <br>
+                    <div>
+                        <button [disabled]="!formularioDeUsuario.valid">Enviar dados</button>
+                    </div>
+                    <br>
+                    <br>
+                </form>
+            </div>
         </div>
-    </fieldset>
-    <br>
-    <div>
-        <fieldset>
-        <div class="form-group">
-            <label for="CPF" >CPF *:</label>
-            <input type="cpf" onblur="validarCPF()" onfocus="redefinirMsgC()" id="CPF"/>
-            <br>
-            <span id="error-cpf"></span>
-        </div>
-    </fieldset><div *ngIf="!cpf.pristine && cpf.errors">
-        <p *ngIf="cpf.errors.required">
-          CPF é obrigatório.
-        </p>
-        <p *ngIf="cpf.errors.cpfInvalido">
-          Digite um CPF válido
-        </p>
-      </div>
     </div>
-    <br>
-    <div>
-        <fieldset>
-        <div class="form-group">
-            <label for="data" >Nascimento *:</label>
-            <input type="date" onblur="validarData()" onfocus="redefinirMsgD()" id="data"/>
-            <br>
-            <span id="error-data"></span>
-        </div>
-    </fieldset><div *ngIf="!nascimento.pristine && nascimento.errors">
-        <p *ngIf="nascimento.errors.required">
-          Data de Nascimento é obrigatória.
-        </p>
-        <p *ngIf="nascimento.errors.menorDeIdade">
-          Você precisa ter mais de 18 anos para cadastrar-se.
-        </p>
-      </div>
-    </div>
-    <br>
-    <div>
-        <fieldset>
-        <div class="form-group">
-            <label for="senha" >Senha *:</label>
-            <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="senha"/>
-            <br>
-            <span id="error-senha"></span>
-        </div>
-    </fieldset><div *ngIf="!senha.pristine && senha.errors">
-        <p *ngIf="senha.errors.required">
-          Senha é obrigatória.
-        </p>
-        <p *ngIf="senha.errors.minlength">
-          Senha deve ter no mínimo 6 caracters.
-        </p>
-        <p *ngIf="senha.errors.maxlength">
-          Senha deve ter no máximo 12 caracters.
-        </p>
-      </div>
-    </div>
-    <br>
-    <div>
-        <fieldset>
-        <div class="form-group">
-            <label for="csenha" >Confirmar Senha*:</label>
-            <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="csenha"/>
-            <br>
-            <span id="error-senha"></span>
-        </div>
-    </fieldset><div *ngIf="!confirmarSenha.pristine && confirmarSenha.errors">
-        <p *ngIf="confirmarSenha.errors.required">
-          Confirme sua senha.
-        </p>
-        <p *ngIf="confirmarSenha.errors.senhasNaoCoincidem">
-          As senhas não coincidem.
-        </p>
-      </div>
-    </div>
-    <div>
-      <label>Coordenador</label>
-      <input type="checkbox" >
-    </div>
-    <br>
-    <div>
-      <button [disabled]="!formularioDeUsuario.valid">Enviar dados</button>
-    </div>
-    <br>
-    <br>
-  </form>
 </body>
