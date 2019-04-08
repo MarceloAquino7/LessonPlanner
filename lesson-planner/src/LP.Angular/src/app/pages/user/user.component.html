@@ -1,15 +1,50 @@
-<body>
-  <div class="titulo">
-    Cadastro de Usuários
-  </div>
-  <form [formGroup]="formularioDeUsuario" (ngSubmit)="enviarDados()">
-    <div>
-      <label for="nome">Nome: </label>
-      <input type="text" formControlName="nome">
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="user.component.css">
+    <link rel="stylesheet" href="menu.component.css">
+    <script src="user.script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body class="body">
+    <div id=menu>
+    <input type="checkbox" id="check">
+    <label id="icone" for="check">
+        <img src="../../../assets/icone.png"/>
+    </label>
+    
+    <div class="barra">
+    
+        <nav>
+            <a href="../../../app/pages/login/login.component.html"><div class="link">Login</div></a>
+            <a href="../../../app/pages/cursos/cursos.component.html"><div class="link">Cadastro de Curso</div></a>
+            <a href="../../../app/pages/disciplinas/disciplinas.component.html"><div class="link">Cadastro de Disciplinas</div></a>
+            <a href="../../../app/pages/turma/turma.component.html"><div class="link">Cadastro de Turma</div></a>
+            <a href="../../../app/pages/user/user.component.html"><div class="link">Cadastro de Usuário</div></a>
+        </nav>
+        
+    </div>
+    </div>
+    <div  id="divFull">
+    <div id="branca">
+        <div id="logo"><img src="../../../assets/facens-logo.png"/></div>
+    <div class="Titulo">
+        <p>Lesson Planner</p>
+    </div>
+    <div class="Nome">
+        Cadastro de Turma
+    </div>
+    <div class="forms">
+        <form>
+            <div>
       <div *ngIf="!nome.pristine && nome.errors">
-        <p *ngIf="nome.errors.required">
-          Nome é obrigatório.
-        </p>
+        <fieldset>
+        <div class="form-group">
+            <label for="nome" >Nome *:</label>
+            <input type="name" onblur="validarNome()" onfocus="redefinirMsg()" id="nome"/>
+            <br>
+            <span id="error-nome"></span>
+        </div>
+        </fieldset>
         <p *ngIf="nome.errors.minlength">
           Nome deve ter no mínimo 3 caracters.
         </p>
@@ -19,20 +54,24 @@
       </div>
     </div>
     <br>
-    <div>
-      <label for="email">E-mail: </label>
-      <input type="text" formControlName="email">
-      <div *ngIf="!email.pristine && email.errors">
-        <p *ngIf="email.errors.email">
-          Digite um e-mail válido.
-        </p>
-      </div>
-    </div>
+    <fieldset>
+        <div class="form-group">
+            <label for="email" >Email *:</label>
+            <input type="email" onblur="validarEmail()" onfocus="redefinirMsgE()" id="email"/>
+            <br>
+            <span id="error-email"></span>
+        </div>
+    </fieldset>
     <br>
     <div>
-      <label for="cpf">CPF: </label>
-      <input type="text" formControlName="cpf">
-      <div *ngIf="!cpf.pristine && cpf.errors">
+        <fieldset>
+        <div class="form-group">
+            <label for="CPF" >CPF *:</label>
+            <input type="cpf" onblur="validarCPF()" onfocus="redefinirMsgC()" id="CPF"/>
+            <br>
+            <span id="error-cpf"></span>
+        </div>
+    </fieldset><div *ngIf="!cpf.pristine && cpf.errors">
         <p *ngIf="cpf.errors.required">
           CPF é obrigatório.
         </p>
@@ -43,9 +82,14 @@
     </div>
     <br>
     <div>
-      <label for="nascimento">Nascimento: </label>
-      <input type="date" formControlName="nascimento">
-      <div *ngIf="!nascimento.pristine && nascimento.errors">
+        <fieldset>
+        <div class="form-group">
+            <label for="data" >Nascimento *:</label>
+            <input type="date" onblur="validarData()" onfocus="redefinirMsgD()" id="data"/>
+            <br>
+            <span id="error-data"></span>
+        </div>
+    </fieldset><div *ngIf="!nascimento.pristine && nascimento.errors">
         <p *ngIf="nascimento.errors.required">
           Data de Nascimento é obrigatória.
         </p>
@@ -56,9 +100,14 @@
     </div>
     <br>
     <div>
-      <label for="senha">Senha: </label>
-      <input type="password" formControlName="senha">
-      <div *ngIf="!senha.pristine && senha.errors">
+        <fieldset>
+        <div class="form-group">
+            <label for="senha" >Senha *:</label>
+            <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="senha"/>
+            <br>
+            <span id="error-senha"></span>
+        </div>
+    </fieldset><div *ngIf="!senha.pristine && senha.errors">
         <p *ngIf="senha.errors.required">
           Senha é obrigatória.
         </p>
@@ -72,9 +121,14 @@
     </div>
     <br>
     <div>
-      <label for="confirmarSenha">Confirmar Senha: </label>
-      <input type="password" formControlName="confirmarSenha">
-      <div *ngIf="!confirmarSenha.pristine && confirmarSenha.errors">
+        <fieldset>
+        <div class="form-group">
+            <label for="csenha" >Confirmar Senha*:</label>
+            <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="csenha"/>
+            <br>
+            <span id="error-senha"></span>
+        </div>
+    </fieldset><div *ngIf="!confirmarSenha.pristine && confirmarSenha.errors">
         <p *ngIf="confirmarSenha.errors.required">
           Confirme sua senha.
         </p>

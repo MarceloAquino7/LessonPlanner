@@ -1,24 +1,11 @@
 body {
-    text-align: center;
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    overflow: hidden;
-}
-
-#divLogo {
-    background-image: url('../../../assets/facens-logo.png');
-    /* Background image is centered vertically and horizontally at all times */
-    background-position: top center;
-    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 #divFull {
     overflow: hidden;
-    background-image: url('../../../assets/facens-wallp.jpg');
     height: 100vw;
-
+    background-image: url('../../../assets/facens-wallp.jpg');"    
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
     
@@ -38,7 +25,57 @@ body {
     background-color: #464646;
 }
 
-.titulo { 
+.Titulo {
     text-align: center;
-    overflow: hidden;
+    margin-top: -310px;
+}
+
+.Nome {
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.example-full-width{
+    margin-left: 25px;
+}
+
+.forms {
+    text-align: center;
+    position: relative;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+mat-card-title{
+    margin-bottom: 10px;
+}
+
+#branca{
+    width: 300px;
+    height: 265px;
+    background-color: rgba(255,255,255,0.7);
+    border-style: double;
+    border-color: gray;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: 600px;
+    left: 600px;
+}
+
+#logo{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+#curso{
+    margin-left: -30px;
+}
+
+#logo img{
+    opacity: .5;
 }
