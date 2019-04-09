@@ -39,58 +39,87 @@
         <div id="branca">
             <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
             <div class="Titulo">
-                
+
             </div>
             <div class="Nome">
-                Cadastro de Cursos
             </div>
             <div class="forms">
                 <form>
-                    <div>
-                        <label for="nomeCurso">Nome Curso: </label>
-                        <input type="text">
-                    </div>
-                    <br>
-                    <div>
-                        <label for="competencias">Competencias: </label>
-                        <select>
-                            <option value="competencia0">Selecione...</option>
-                            <option value="competencia1">Competencia 1</option>
-                            <option value="competencia2">Competencia 2</option>
-                            <option value="competencia3">Competencia 3</option>
-                            <option value="competencia4">Competencia 4</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="objetivos">Objetivos: </label>
-                        <select>
-                            <option value="objetivo0">Selecione...</option>
-                            <option value="objetivo1">Objetivo 1</option>
-                            <option value="objetivo2">Objetivo 2</option>
-                            <option value="objetivo3">Objetivo 3</option>
-                            <option value="objetivo4">Objetivo 4</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="habilidades">Habilidades: </label>
-                        <select>
-                            <option value="habilidade0">Selecione...</option>
-                            <option value="habilidade1">Habilidade 1</option>
-                            <option value="habilidade2">Habilidade 2</option>
-                            <option value="habilidade3">Habilidade 3</option>
-                            <option value="habilidade4">Habilidade 4</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="coordenador">Coordenador: </label>
-                        <input type="text">
-                    </div>
-                    <br>
+                    <mat-card-header>
+                        <mat-card-title>Cadastro de Cursos</mat-card-title>
+                    </mat-card-header>
 
-                    <input type="button" value="Enviar">
+                    <mat-card-content>
+                        <form class="example-form">
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Course name" [(ngModel)]="course_name" name="courseName"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Competências</mat-label>
+                                            <select matNativeControl required>
+                                                <option value="competencia0">Selecione...</option>
+                                                <option value="competencia1">Competencia 1</option>
+                                                <option value="competencia2">Competencia 2</option>
+                                                <option value="competencia3">Competencia 3</option>
+                                                <option value="competencia4">Competencia 4</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Objetivo</mat-label>
+                                            <select matNativeControl required>
+                                                <option value="objetivo0">Selecione...</option>
+                                                <option value="objetivo1">Objetivo 1</option>
+                                                <option value="objetivo2">Objetivo 2</option>
+                                                <option value="objetivo3">Objetivo 3</option>
+                                                <option value="objetivo4">Objetivo 4</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Habilidades</mat-label>
+                                            <select matNativeControl required>
+                                                <option value="habilidade0">Selecione...</option>
+                                                <option value="habilidade1">Habilidade 1</option>
+                                                <option value="habilidade2">Habilidade 2</option>
+                                                <option value="habilidade3">Habilidade 3</option>
+                                                <option value="habilidade4">Habilidade 4</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Coordenador" [(ngModel)]="coordenador" type="text"
+                                                name="coordenador" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button id="btnSaveCurso" mat-raised-button (click)="saveCurso()" color="primary">Salvar</button>
+                    </mat-card-actions>
                 </form>
             </div>
         </div>

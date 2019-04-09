@@ -41,126 +41,83 @@
             <div class="Titulo">
             </div>
             <div class="Nome">
-                Cadastro de Usuário
             </div>
             <div class="forms">
                 <form>
-                    <div>
-                        <div *ngIf="!nome.pristine && nome.errors">
-                            <fieldset>
-                                <div class="form-group">
-                                    <label for="nome">Nome *:</label>
-                                    <input type="name" onblur="validarNome()" onfocus="redefinirMsg()" id="nome" />
-                                    <br>
-                                    <span id="error-nome"></span>
-                                </div>
-                            </fieldset>
-                            <p *ngIf="nome.errors.minlength">
-                                Nome deve ter no mínimo 3 caracters.
-                            </p>
-                            <p *ngIf="nome.errors.maxlength">
-                                Nome deve ter no máximo 100 caracters.
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="email">Email *:</label>
-                            <input type="email" onblur="validarEmail()" onfocus="redefinirMsgE()" id="email" />
-                            <br>
-                            <span id="error-email"></span>
-                        </div>
-                    </fieldset>
-                    <br>
-                    <div>
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="CPF">CPF *:</label>
-                                <input type="cpf" onblur="validarCPF()" onfocus="redefinirMsgC()" id="CPF" />
-                                <br>
-                                <span id="error-cpf"></span>
-                            </div>
-                        </fieldset>
-                        <div *ngIf="!cpf.pristine && cpf.errors">
-                            <p *ngIf="cpf.errors.required">
-                                CPF é obrigatório.
-                            </p>
-                            <p *ngIf="cpf.errors.cpfInvalido">
-                                Digite um CPF válido
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                    <div>
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="data">Nascimento *:</label>
-                                <input type="date" onblur="validarData()" onfocus="redefinirMsgD()" id="data" />
-                                <br>
-                                <span id="error-data"></span>
-                            </div>
-                        </fieldset>
-                        <div *ngIf="!nascimento.pristine && nascimento.errors">
-                            <p *ngIf="nascimento.errors.required">
-                                Data de Nascimento é obrigatória.
-                            </p>
-                            <p *ngIf="nascimento.errors.menorDeIdade">
-                                Você precisa ter mais de 18 anos para cadastrar-se.
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                    <div>
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="senha">Senha *:</label>
-                                <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="senha" />
-                                <br>
-                                <span id="error-senha"></span>
-                            </div>
-                        </fieldset>
-                        <div *ngIf="!senha.pristine && senha.errors">
-                            <p *ngIf="senha.errors.required">
-                                Senha é obrigatória.
-                            </p>
-                            <p *ngIf="senha.errors.minlength">
-                                Senha deve ter no mínimo 6 caracters.
-                            </p>
-                            <p *ngIf="senha.errors.maxlength">
-                                Senha deve ter no máximo 12 caracters.
-                            </p>
-                        </div>
-                    </div>
-                    <br>
-                    <div>
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="csenha">Confirmar Senha*:</label>
-                                <input type="password" onblur="validarSenha()" onfocus="redefinirMsgS()" id="csenha" />
-                                <br>
-                                <span id="error-senha"></span>
-                            </div>
-                        </fieldset>
-                        <div *ngIf="!confirmarSenha.pristine && confirmarSenha.errors">
-                            <p *ngIf="confirmarSenha.errors.required">
-                                Confirme sua senha.
-                            </p>
-                            <p *ngIf="confirmarSenha.errors.senhasNaoCoincidem">
-                                As senhas não coincidem.
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <label>Coordenador</label>
-                        <input type="checkbox">
-                    </div>
-                    <br>
-                    <div>
-                        <button [disabled]="!formularioDeUsuario.valid">Enviar dados</button>
-                    </div>
-                    <br>
-                    <br>
+                    <mat-card-header>
+                        <mat-card-title>Cadastro de Usuário</mat-card-title>
+                    </mat-card-header>
+
+
+                    <mat-card-content>
+                        <form class="example-form">
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Name" [(ngModel)]="user_name" name="name" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Email" [(ngModel)]="user_email" name="email"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="CPF" [(ngModel)]="user_cpf" name="cpf" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput [matDatepicker]="picker" placeholder="Nascimento">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="password" matInput placeholder="Senha" [(ngModel)]="user_senha"
+                                                name="senha" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input type="password" matInput placeholder="Confirmar senha" [(ngModel)]="confirmSenha"
+                                                name="confirmSenha" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Coordenador" [(ngModel)]="coordenador" type="text"
+                                                name="coordenador" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button id="btnSaveUser" mat-raised-button (click)="saveUser()" color="primary">Salvar</button>
+                    </mat-card-actions>
                 </form>
             </div>
         </div>
