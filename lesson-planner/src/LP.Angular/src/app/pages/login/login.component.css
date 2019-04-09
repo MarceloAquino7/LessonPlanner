@@ -42,6 +42,7 @@
     text-align: center;
     position: relative;
     margin-top: 20px;
+    height: 25vw;
 }
 
 mat-card-title{

@@ -39,35 +39,55 @@
         <div id="branca">
             <div id="logo"><img src="../../../assets/facens-logo.png" /></div>
             <div class="Titulo">
-                
             </div>
             <div class="Nome">
-                Cadastro de Disciplinas
             </div>
             <div class="forms">
                 <form>
-                    <div>
-                        <label for="nome">Nome: </label>
-                        <input type="text">
-                    </div>
-                    <br>
-                    <div>
-                        <label>Responsavel: </label>
-                        <input type="text">
-                    </div>
-                    <br>
-                    <div>
-                        <label id="curso">Curso: </label>
-                        <select>
-                            <option value="curso0">Selecione...</option>
-                            <option value="curso1">Computação</option>
-                            <option value="curso2">Civil</option>
-                            <option value="curso3">Mecatronica</option>
-                            <option value="curso4">Eletrica</option>
-                        </select><br>
-                    </div>
-                    <br>
-                    <input type="button" value="Enviar">
+                    <mat-card-header>
+                        <mat-card-title>Cadastro de Disciplinas</mat-card-title>
+                    </mat-card-header>
+                    
+                    <mat-card-content>
+                        <form class="example-form">
+                            <table class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <input matInput placeholder="Responsável" [(ngModel)]="responsavel" name="responsavel"
+                                                required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Curso</mat-label>
+                                            <select matNativeControl required>
+                                                <option value="curso0">Selecione...</option>
+                                                <option value="curso1">Computação</option>
+                                                <option value="curso2">Civil</option>
+                                                <option value="curso3">Mecatronica</option>
+                                                <option value="curso4">Eletrica</option>
+                                            </select>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <button id="btnSaveDisciplina" mat-raised-button (click)="saveDisc()" color="primary">Salvar</button>
+                    </mat-card-actions>
                 </form>
             </div>
         </div>

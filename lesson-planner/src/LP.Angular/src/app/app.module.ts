@@ -31,6 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     ThirdModule.MatProgressSpinnerModule,
     ThirdModule.MatTableModule,
     ThirdModule.MatToolbarModule,
+    ThirdModule.MatDatepickerModule,
+    ThirdModule.MatNativeDateModule,
     AngularModule.HttpClientModule,
     AppRoutingModule
   ],
